@@ -26,17 +26,12 @@ emoji:
     }
 return
 
-#O::
-  baseDir = E:\github\ahkemoji\emojis
-	InputBox, emojiName, "emojis","emojis表情",,50,100
+#S::
+	InputBox, emojiName, "emojis","保存图片",,50,100
 	if ErrorLevel
 		Return
-  ImageFile = %baseDir%\%emojiName%
-	CopyImg(ImageFile)
-  Send ^v
-	;ToolTip, % "`n`n" A_Tab "Copied!" A_Tab A_Tab "`n`n"
-	;Sleep, 2000
-	;ToolTip
+  image = emojis\%emojiName%
+	WinClip.SaveBitmap(image,"png")
 Return
 
 CopyImg(ImageFile)
