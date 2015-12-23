@@ -14,8 +14,16 @@ emoji:
     	ImageFile = emojis\%$1%.gif
 		IfNotExist,%ImageFile%
     	ImageFile = emojis\%$1%.jpg
-		CopyImg(ImageFile)
-    Send ^v
+    IfNotExist,%ImageFile%
+    {
+    	clipboard = :%$1%:
+      Send ^v
+    }
+    IfExist,%ImageFile%
+    {
+			CopyImg(ImageFile)
+    	Send ^v
+    }
 return
 
 #O::
