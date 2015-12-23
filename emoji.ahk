@@ -28,6 +28,7 @@ return
 
 #S::
 	InputBox, emojiName, "emojis","保存图片",,50,100
+  ;%A_WorkingDir%
 	if ErrorLevel
 		Return
   image = emojis\%emojiName%
